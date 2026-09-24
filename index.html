@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyan" data-mode="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeetash Goswami — Electrical & Embedded Systems Engineer</title>
+  <meta name="description" content="Portfolio of Jeetash Goswami — Electrical Engineer, Embedded Systems Developer, and AI Researcher specializing in High-Voltage Motor Drives, Custom PCB Design, and Applied Deep Learning.">
+  <meta name="keywords" content="Jeetash Goswami, Electrical Engineer, Embedded Systems, Motor Drives, BLDC, PMSM, ANSYS Maxwell, PCB Design, NUST, VisuAle, Formula Electric Racing NUST">
+  <meta name="author" content="Jeetash Goswami">
+
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:title" content="Jeetash Goswami — Electrical & Embedded Systems Engineer">
+  <meta property="og:description" content="Explore hardware prototypes, high-voltage motor controllers, ANSYS FEA simulations, peer-reviewed research papers, and technical innovations.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/profile/jeetash-profile.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts: Space Grotesk (Architectural Headings), Inter (Body), JetBrains Mono (Code/Telemetry) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/profile/jeetash-profile.webp">
+</head>
+<body>
+
+  <!-- Blueprint Grid Background & Interactive Canvas -->
+  <div class="blueprint-grid"></div>
+  <canvas id="canvas-circuit"></canvas>
+
+  <!-- Floating Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <nav class="nav-container">
+        <a href="#hero" class="nav-brand">
+          <div class="brand-monogram">JG</div>
+          <div class="brand-meta">
+            <span class="brand-name">JEETASH GOSWAMI</span>
+            <span class="brand-role">EE & EMBEDDED SYSTEMS</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">// ABOUT</a></li>
+          <li><a href="#projects" class="nav-link">// PROJECTS</a></li>
+          <li><a href="#research" class="nav-link">// RESEARCH</a></li>
+          <li><a href="#credentials" class="nav-link">// CREDENTIALS</a></li>
+          <li><a href="#experience" class="nav-link">// LEADERSHIP</a></li>
+          <li><a href="#skills" class="nav-link">// SKILLS</a></li>
+          <li><a href="#contact" class="nav-link">// CONTACT</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Terminal Trigger -->
+          <button id="btn-open-terminal" class="btn-icon" title="Open Interactive CLI Console (Ctrl+K or `)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+          </button>
+
+          <!-- Audio FX Toggle -->
+          <button id="sound-toggle-btn" class="btn-icon" title="Toggle Synthesized Audio Feedback">
+            <span id="sound-icon"></span>
+          </button>
+
+          <!-- Theme Accent Picker -->
+          <div class="theme-picker-wrapper">
+            <button id="theme-toggle-btn" class="btn-icon" title="Customize Accent Color Theme">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a7 7 0 0 0 0 14v6"></path><circle cx="12" cy="9" r="1"></circle></svg>
+            </button>
+            <div id="theme-dropdown" class="theme-dropdown">
+              <div class="theme-dropdown-header">Interactive Theme</div>
+              <div class="theme-options">
+                <button class="theme-swatch" data-color="cyan" title="Cyber Cyan"></button>
+                <button class="theme-swatch" data-color="emerald" title="Emerald Matrix"></button>
+                <button class="theme-swatch" data-color="amber" title="Electric Amber"></button>
+                <button class="theme-swatch" data-color="violet" title="Hyperion Violet"></button>
+                <button class="theme-swatch" data-color="crimson" title="Solar Crimson"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Light/Dark Mode -->
+          <button id="mode-toggle-btn" class="btn-icon" title="Toggle Dark/Light Mode">
+            <span id="mode-icon"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Hero Section
+       ========================================================================== -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left: Headline & Actions -->
+        <div class="hero-text-content">
+          <div class="hero-status-pill">
+            <span class="pulse-dot"></span>
+            <span>OPEN FOR HARDWARE R&D & POWER SYSTEMS ROLES</span>
+          </div>
+
+          <h1 class="hero-name">
+            JEETASH <br>
+            <span class="accent">GOSWAMI</span>
+          </h1>
+
+          <div class="hero-role-wrapper">
+            <span class="mono">// </span>
+            <span id="typewriter-text" class="typewriter-text"></span>
+            <span class="cursor-blink">|</span>
+          </div>
+
+          <p class="hero-description">
+            Electrical Engineer & Embedded Systems Specialist currently studying at <strong>NUST-PNEC</strong>. 
+            I bridge high-voltage power electronics and multi-layer custom PCB design with applied machine learning and cinematic technical storytelling.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore Engineering Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+
+            <button id="hero-terminal-btn" class="btn btn-terminal-trigger">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              <span>Launch Terminal [>_]</span>
+            </button>
+
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get In Touch</span>
+            </a>
+          </div>
+
+          <!-- Hero Telemetry Stats Bar -->
+          <div class="hero-stats-bar">
+            <div class="stat-item">
+              <div class="stat-value">1.5 <span class="unit">kW+</span></div>
+              <div class="stat-label">Solar BLDC Drive</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">34th <span class="unit">Global</span></div>
+              <div class="stat-label">Formula Student UK</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">15+ <span class="unit">Papers</span></div>
+              <div class="stat-label">Research & Patents</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">11 <span class="unit">Verified</span></div>
+              <div class="stat-label">Certifications</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 3D Tilt Profile Card -->
+        <div class="hero-card-perspective">
+          <div class="hero-profile-card">
+            <div class="hero-card-ambient-glow"></div>
+            
+            <div class="hero-card-header">
+              <span class="mono">SYSTEM ID // JG-NUST-2026</span>
+              <div class="sys-telemetry">
+                <span>ONLINE</span>
+                <span>PKT (UTC+5)</span>
+              </div>
+            </div>
+
+            <div class="hero-image-frame">
+              <picture>
+                <source srcset="assets/images/profile/jeetash-profile.webp" type="image/webp">
+                <img src="assets/images/profile/jeetash-profile.png" alt="Jeetash Goswami — Electrical & Embedded Systems Engineer" />
+              </picture>
+              <div class="hero-image-overlay"></div>
+              <div class="hero-image-badge">
+                <div class="badge-location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Karachi, PK (NUST-PNEC)</span>
+                </div>
+                <div class="badge-clock" id="live-clock">--:--:-- PKT</div>
+              </div>
+            </div>
+
+            <div class="hero-card-meta">
+              <div class="hero-card-name">
+                <span>Jeetash Goswami</span>
+                <svg class="verified-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+              </div>
+              <div class="hero-card-sub">National University of Sciences & Technology • Dept of Electronics & Power</div>
+              
+              <div class="hero-card-pills">
+                <span class="hero-card-pill">⚡ High-Voltage Drives</span>
+                <span class="hero-card-pill">🔌 Custom 2/4-Layer PCBs</span>
+                <span class="hero-card-pill">🏎️ Formula Electric UK</span>
+                <span class="hero-card-pill">🧠 Applied Deep Learning</span>
+                <span class="hero-card-pill">🎬 VisuAle Director</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       About Section
+       ========================================================================== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">ENGINEERING PHILOSOPHY</div>
+        <h2 class="section-title">Architecting Intelligent Hardware & Compelling Technical Narratives</h2>
+        <p class="section-subtitle">
+          From designing 200V discrete power inverters to authoring peer-reviewed machine diagnostics, I focus on executing complex engineering ideas with mathematical rigor and practical execution.
+        </p>
+      </div>
+
+      <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px;">
+          <h3 style="font-size: 1.35rem; margin-bottom: 16px; color: var(--text-main); display: flex; align-items: center; gap: 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            <span>The Technical Core</span>
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7; margin-bottom: 16px;">
+            At <strong>NUST-PNEC</strong>, my engineering foundation was forged across power electronics, motor control theory (Field-Oriented Control, sensorless zero-crossing), embedded firmware development (ESP32, STM32, Jetson Nano, ATmega), and multi-layer custom PCB design.
+          </p>
+          <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7;">
+            Whether optimizing the d-q flux paths of an Interior Permanent Magnet motor in <strong>ANSYS Maxwell</strong>, routing microvolt-level differential analog lines away from 24V switching valves, or tuning ArduCopter swarm coordination, I prioritize clean hardware architecture and signal integrity.
+          </p>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px;">
+          <h3 style="font-size: 1.35rem; margin-bottom: 16px; color: var(--text-main); display: flex; align-items: center; gap: 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+            <span>The Narrative & Strategic Dimension</span>
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7; margin-bottom: 16px;">
+            As the founder of <strong>VisuAle</strong>, I direct and produce cinematic visual content for commercial and engineering clients, translating intricate technical milestones into clear, high-impact stories.
+          </p>
+          <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7;">
+            At <strong>Formula Electric Racing NUST (FERN)</strong>, I served as Senior Marketing Executive & Electrical Engineer, bridging the gap between high-voltage powertrain engineering and corporate strategy, securing crucial industrial sponsorships that powered our campaign at <strong>Formula Student UK 2025</strong> (34th Global Rank).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Projects Section
+       ========================================================================== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">HARDWARE & SYSTEMS ENGINEERING</div>
+        <h2 class="section-title">Selected Projects & Case Studies</h2>
+        <p class="section-subtitle">
+          End-to-end hardware platforms, motor drive inverters, medical controllers, and multi-physics FEA simulations engineered from concept to verification.
+        </p>
+      </div>
+
+      <div class="filter-bar-container">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-project-filter="all">All Systems (10)</button>
+          <button class="filter-tab" data-project-filter="power">Power & Motor Drives (4)</button>
+          <button class="filter-tab" data-project-filter="embedded">Embedded & Hardware (5)</button>
+          <button class="filter-tab" data-project-filter="simulation">CAD & Simulation (3)</button>
+          <button class="filter-tab" data-project-filter="iot">IoT & SCADA (2)</button>
+          <button class="filter-tab" data-project-filter="ai">AI & Robotics (2)</button>
+        </div>
+      </div>
+
+      <div id="projects-grid" class="projects-grid">
+        <!-- Rendered dynamically by main.js from PORTFOLIO_DATA.projects -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Research Papers & Patents Section
+       ========================================================================== -->
+  <section id="research" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">ACADEMIC & INTELLECTUAL PROPERTY</div>
+        <h2 class="section-title">Research Publications & Patents</h2>
+        <p class="section-subtitle">
+          15+ peer-reviewed conference publications, journals, and formal patent applications spanning intrusion detection, magnetic field machinery diagnostics, satellite remote sensing, and power electronics.
+        </p>
+      </div>
+
+      <div class="filter-bar-container">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-research-filter="all">All Publications (12+)</button>
+          <button class="filter-tab" data-research-filter="cyber">Cyber Security & AI</button>
+          <button class="filter-tab" data-research-filter="power">Power Systems & Drives</button>
+          <button class="filter-tab" data-research-filter="climate">Remote Sensing & Energy</button>
+          <button class="filter-tab" data-research-filter="patents">Patents Portfolio (6)</button>
+        </div>
+      </div>
+
+      <div id="research-grid" class="research-grid">
+        <!-- Rendered dynamically by main.js from PORTFOLIO_DATA.researchPapers -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Certifications Section
+       ========================================================================== -->
+  <section id="credentials" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">VERIFIED CREDENTIALS</div>
+        <h2 class="section-title">Professional Certifications</h2>
+        <p class="section-subtitle">
+          Accredited credentials across machine learning, semiconductor characterization, aerospace engineering simulations, and agentic AI protocols.
+        </p>
+      </div>
+
+      <div id="certs-grid" class="certs-grid">
+        <!-- Rendered dynamically by main.js from PORTFOLIO_DATA.certificates -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Experience & Leadership Section
+       ========================================================================== -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">LEADERSHIP & TRACK RECORD</div>
+        <h2 class="section-title">Experience & Key Appointments</h2>
+        <p class="section-subtitle">
+          Leading electric vehicle strategy, engineering industrial cloud telemetry, and directing commercial digital media.
+        </p>
+      </div>
+
+      <div id="experience-timeline" class="timeline">
+        <!-- Rendered dynamically by main.js from PORTFOLIO_DATA.experience -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Skills Matrix Section
+       ========================================================================== -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">TECHNICAL TOOLCHAIN</div>
+        <h2 class="section-title">Skills & Toolchain Proficiency</h2>
+        <p class="section-subtitle">
+          Quantified competencies across hardware layout, multi-physics finite element simulation, embedded firmware, and commercial production.
+        </p>
+      </div>
+
+      <div id="skills-matrix-grid" class="skills-matrix-grid">
+        <!-- Rendered dynamically by main.js from PORTFOLIO_DATA.skillsMatrix -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Contact Section
+       ========================================================================== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">GET IN TOUCH</div>
+        <h2 class="section-title">Initiate Transmission</h2>
+        <p class="section-subtitle">
+          Whether you have a challenging hardware R&D project, electric powertrain challenge, or are looking for an engineer to lead systems innovation.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Meta Card -->
+        <div class="contact-info-card">
+          <div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 8px;">Let's Build Something Exceptional</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Available for full-time engineering roles, high-voltage powertrain R&D, and custom embedded systems consulting worldwide.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="contact-meta">
+                  <span>Direct Transmission</span>
+                  <a href="mailto:jeetashgoswami1@gmail.com">jeetashgoswami1@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </div>
+                <div class="contact-meta">
+                  <span>Professional Network</span>
+                  <a href="https://linkedin.com/in/jeetash-goswami" target="_blank" rel="noopener">linkedin.com/in/jeetash-goswami</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </div>
+                <div class="contact-meta">
+                  <span>Code Repositories</span>
+                  <a href="https://github.com/jeetash" target="_blank" rel="noopener">github.com/jeetash</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="contact-meta">
+                  <span>Base Location</span>
+                  <p>Karachi, Pakistan (NUST-PNEC)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <button id="copy-email-btn" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy Email Address</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Contact Form Card -->
+        <div class="contact-form-wrapper">
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">YOUR NAME</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="e.g. Dr. Alex Vance" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">YOUR EMAIL ADDRESS</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="e.g. alex.vance@aerospace.io" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">INQUIRY SUBJECT</label>
+              <input type="text" id="contact-subject" class="form-input" placeholder="e.g. High-Voltage Motor Drive Collaboration / Full-Time Role" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">PROJECT SPECIFICATION / MESSAGE</label>
+              <textarea id="contact-message" class="form-textarea" placeholder="Detail your project specifications, hardware requirements, or role overview..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="justify-content: center;">
+              <span>Transmit Message</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>
+        <span>© 2026 JEETASH GOSWAMI. ENGINEERED FOR HIGH-PERFORMANCE HOSTING ON GITHUB PAGES.</span>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Back to Top ↑</a>
+        <a href="https://github.com/jeetash" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/jeetash-goswami" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:jeetashgoswami1@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Interactive Terminal / Engineer CLI Drawer
+       ========================================================================== -->
+  <div id="terminal-modal" class="terminal-modal-overlay">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="terminal-dots">
+          <span id="terminal-close-btn" class="term-dot close" title="Close Terminal"></span>
+          <span class="term-dot min"></span>
+          <span class="term-dot max"></span>
+        </div>
+        <div class="terminal-title">jeetash@nust-pnec: ~/portfolio-cli v2.4</div>
+        <div style="width: 48px;"></div>
+      </div>
+
+      <div id="terminal-output" class="terminal-body">
+        <div class="term-line" style="color: var(--primary); font-weight: bold;">
+          JEETASH GOSWAMI // ENGINEER CONSOLE [ACTIVE]
+        </div>
+        <div class="term-line" style="color: var(--text-muted);">
+          Type <span style="color: var(--primary);">help</span> to view available system commands or click a quick-command pill below.
+        </div>
+      </div>
+
+      <div class="terminal-pills">
+        <button class="term-cmd-pill" data-cmd="bio">bio</button>
+        <button class="term-cmd-pill" data-cmd="skills">skills</button>
+        <button class="term-cmd-pill" data-cmd="projects">projects</button>
+        <button class="term-cmd-pill" data-cmd="papers">papers</button>
+        <button class="term-cmd-pill" data-cmd="certs">certs</button>
+        <button class="term-cmd-pill" data-cmd="fern">fern</button>
+        <button class="term-cmd-pill" data-cmd="theme emerald">theme emerald</button>
+        <button class="term-cmd-pill" data-cmd="contact">contact</button>
+        <button class="term-cmd-pill" data-cmd="matrix">matrix</button>
+        <button class="term-cmd-pill" data-cmd="clear">clear</button>
+      </div>
+
+      <div class="term-prompt-line" style="padding: 10px 16px; background: #070b12;">
+        <span class="term-prompt-symbol">jeetash@nust:~$</span>
+        <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type a command...">
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Project Case Study Modal Dialog
+       ========================================================================== -->
+  <div id="project-modal-overlay" class="modal-overlay">
+    <div class="modal-dialog">
+      <button id="modal-close-btn" class="modal-close-btn" title="Close Case Study">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <!-- Carousel Container -->
+      <div class="modal-carousel-container">
+        <img id="modal-main-img" class="modal-main-image" src="" alt="Project Photo" />
+        <button id="carousel-prev" class="carousel-nav-btn prev" title="Previous Image">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button id="carousel-next" class="carousel-nav-btn next" title="Next Image">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+
+      <!-- Thumbnail Strip -->
+      <div id="modal-thumbs-strip" class="modal-thumbnails-strip"></div>
+
+      <!-- Modal Content Body -->
+      <div class="modal-body">
+        <div class="modal-header-meta">
+          <span id="modal-category" class="modal-category-tag"></span>
+          <h2 id="modal-title" class="modal-title"></h2>
+          <div id="modal-subtitle" class="modal-subtitle"></div>
+        </div>
+
+        <table class="modal-specs-table">
+          <tbody id="modal-specs-tbody"></tbody>
+        </table>
+
+        <div id="modal-description" class="modal-description-text"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts: Data Store first, then Main Application Logic -->
+  <script src="assets/js/projects-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
